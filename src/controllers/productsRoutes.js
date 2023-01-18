@@ -1,10 +1,13 @@
 const express = require('express');
-const listProductsController = require('./listProductsController');
+const { getProducts, getProductsById, createNewProduct } = require('./listProductsController');
+const productNameMidd = require('../middlewares/productNameMidd');
 
 const productRouter = express.Router();
 
-productRouter.get('/products', listProductsController.getProducts);
+productRouter.get('/products', getProducts);
 
-productRouter.get('/products/:id', listProductsController.getProductsById);
+productRouter.get('/products/:id', getProductsById);
+
+productRouter.post('/products', productNameMidd, createNewProduct);
 
 module.exports = productRouter;
