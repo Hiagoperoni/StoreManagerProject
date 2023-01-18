@@ -1,7 +1,7 @@
 const express = require('express');
 // const productRouter = require('./controllers/productsRoutes');
 const listProductsController = require('./controllers/listProductsController');
-const productNameMidd = require('./middlewares/productNameMidd');
+const { verifyProductNameMidd, verifyProductIdMidd } = require('./middlewares/productNameMidd');
 
 const app = express();
 
@@ -12,9 +12,9 @@ app.get('/', (_request, response) => {
 
 app.get('/products', listProductsController.getProducts);
 
-app.get('/products/:id', listProductsController.getProductsById);
+app.get('/products/:id', verifyProductIdMidd, listProductsController.getProductsById);
 
-app.post('/products', productNameMidd, listProductsController.createNewProduct);
+app.post('/products', verifyProductNameMidd, listProductsController.createNewProduct);
 
 // app.use(productRouter);
 

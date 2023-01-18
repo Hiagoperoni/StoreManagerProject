@@ -1,7 +1,7 @@
 const { connection } = require('./connection');
 
 const getAllSales = async () => {
-  const query = `SELECT salesProducts.sale_id AS saleid,
+  const query = `SELECT salesProducts.sale_id AS saleId,
 salesDate.date AS date,
 salesProducts.product_id AS productId,
 salesProducts.quantity AS quantity
