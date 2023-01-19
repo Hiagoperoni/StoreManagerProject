@@ -7,14 +7,17 @@ const getProducts = async (req, res) => {
 
 const getProductsById = async (req, res) => {
   const { id } = req.params;
-  const productsById = await listProductsService.getProductById(id);
+  const idNumber = Number(id);
+  const productsById = await listProductsService.getProductsById(idNumber);
+  console.log(productsById);
   return res.status(200).json(productsById);
 };
 
 const createNewProduct = async (req, res) => {
   const { name } = req.body;
+  console.log('passou aqui tambem');
   const newProduct = await listProductsService.createNewProduct(name);
-  return res.status(201).json(newProduct);
+  return res.status(200).json(newProduct);
 };
 
 module.exports = {

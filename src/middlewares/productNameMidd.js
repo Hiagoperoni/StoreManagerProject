@@ -2,9 +2,14 @@ const { getProducts } = require('../models/listProductsModel');
 
 const verifyProductIdMidd = async (req, res, next) => {
   const { id } = req.params;
+  const idNumber = Number(id);
   const allProducts = await getProducts();
-  const productExists = allProducts.some((eachProduct) => eachProduct.id === id);
-  if (productExists === false) {
+  // const productsIds = await allProducts.map((eachProduct) => eachProduct.id);
+  const productExists = allProducts.some((eachProduct) => eachProduct.id === idNumber);
+  // if (!productsIds.includes(idNumber)) {
+  //   return res.status(404).json({ message: 'Product not found' });
+  // }
+    if (!productExists) {
     return res.status(404).json({ message: 'Product not found' });
   }
   next();
@@ -12,6 +17,7 @@ const verifyProductIdMidd = async (req, res, next) => {
 
 const verifyProductNameMidd = (req, res, next) => {
   const { name } = req.body;
+  console.log('passou aqui');
   if (!name) {
     return res.status(400).json({ message: '"name" is required' });
   }

@@ -1,15 +1,15 @@
-const { connection } = require('./connection');
+const connection = require('./connection');
 
 const getAllSales = async () => {
   const query = `SELECT salesProducts.sale_id AS saleId,
-salesDate.date AS date,
-salesProducts.product_id AS productId,
-salesProducts.quantity AS quantity
-FROM StoreManager.sales_products AS salesProducts
-INNER JOIN StoreManager.sales AS salesDate
-ON salesProducts.sale_id = salesDate.id
-GROUP BY salesProducts.sale_id, salesProducts.product_id, salesProducts.quantity
-ORDER BY salesProducts.sale_id, salesProducts.product_id;`;
+  salesDate.date AS date,
+  salesProducts.product_id AS productId,
+  salesProducts.quantity AS quantity
+  FROM StoreManager.sales_products AS salesProducts
+  INNER JOIN StoreManager.sales AS salesDate
+  ON salesProducts.sale_id = salesDate.id
+  GROUP BY salesProducts.sale_id, salesProducts.product_id, salesProducts.quantity
+  ORDER BY salesProducts.sale_id, salesProducts.product_id;`;
   const [doneSales] = await connection.execute(query);
   return doneSales;
 };
