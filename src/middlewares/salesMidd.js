@@ -34,7 +34,7 @@ const verifyQuantityMidd = async (req, res, next) => {
 const verifySales = async (req, res, next) => {
   const { id } = req.params;
   const allSales = await getAllSales();
-  const idExists = allSales.some((eachSale) => eachSale.saleId === id);
+  const idExists = allSales.some((eachSale) => eachSale.saleId === Number(id));
   if (idExists === false) {
     return res.status(404).json({ message: 'Sale not found' });
   }

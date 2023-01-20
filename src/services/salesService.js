@@ -9,6 +9,28 @@ const newSale = async (sale) => {
   return objectSale;
 };
 
+const getAllSales = async () => {
+  const allSales = await salesModel.getAllSales();
+  return allSales;
+};
+
+const getSalesById = async (id) => {
+  const allSales = await salesModel.getAllSales();
+  const salesById = await allSales.filter((eachSale) => eachSale.saleId === Number(id));
+  const saleById = await salesById.map((eachSale) => {
+    const { date, productId, quantity } = eachSale;
+    const newObject = {
+      date,
+      productId,
+      quantity,
+    };
+    return newObject;
+  });
+  return saleById;
+};
+
 module.exports = {
   newSale,
+  getAllSales,
+  getSalesById,
 };
