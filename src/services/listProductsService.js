@@ -2,7 +2,6 @@ const listProductsModel = require('../models/listProductsModel');
 
 const getProducts = async () => {
   const products = await listProductsModel.getProducts();
-  console.log(products);
   return products;
 };
 
@@ -17,7 +16,6 @@ const createNewProduct = async (name) => {
     id: newProductId,
     name,
   };
-
   return objectProduct;
 };
 

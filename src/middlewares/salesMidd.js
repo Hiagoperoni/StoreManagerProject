@@ -1,8 +1,9 @@
 const { getAllSales } = require('../models/salesModel');
 const { getProducts } = require('../models/listProductsModel');
 
-const verifyProductIdMidd = async (req, res, next) => {
+const verifyProductIdMidd2 = async (req, res, next) => {
   const products = req.body;
+  console.log('passando no vpm2');
   const allProducts = await getProducts();
   for (let i = 0; i < products.length - 1; i += 1) {
     if (!products[i].productId) {
@@ -18,6 +19,7 @@ const verifyProductIdMidd = async (req, res, next) => {
 
 const verifyQuantityMidd = async (req, res, next) => {
   const products = req.body;
+  console.log('passando no vqm');
   for (let i = 0; i < products.length - 1; i += 1) {
     if (!products[i].quantity) {
       return res.status(400).json({ message: '"quantity" is required' });
@@ -40,7 +42,7 @@ const verifySales = async (req, res, next) => {
 };
 
 module.exports = {
-  verifyProductIdMidd,
+  verifyProductIdMidd2,
   verifyQuantityMidd,
   verifySales,
 };
