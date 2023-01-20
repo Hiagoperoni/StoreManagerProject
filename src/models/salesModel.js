@@ -20,7 +20,6 @@ const newSale = async (sale) => {
   const query = 'INSERT INTO sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)';
   const ok = await sale.map((eachSale) => connection
       .execute(query, [dateSale.insertId, eachSale.productId, eachSale.quantity]));
-  console.log(ok);
   await Promise.all(ok);
   return dateSale.insertId;
 };
