@@ -20,11 +20,15 @@ const createNewProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const { name } = req.body;
-  console.log(name);
   const updatedProduct = await listProductsService.updateProduct(id, name);
   return res.status(200).json(updatedProduct);
+};
+
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  await listProductsService.deleteProduct(id);
+  return res.status(204).end();
 };
 
 module.exports = {
@@ -32,4 +36,5 @@ module.exports = {
   getProductsById,
   createNewProduct,
   updateProduct,
+  deleteProduct,
 };
