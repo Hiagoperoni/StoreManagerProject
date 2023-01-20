@@ -29,5 +29,24 @@
     "created": "2023-01-20T03:37:50.888Z",
     "modified": "2023-01-20T03:37:50.888Z",
     "headers": []
+  },
+  {
+    "_id": "58160d30-7a94-46bd-9898-dc8da671bed8",
+    "colId": "804a56c5-2732-41a2-b24b-08a3f627a9f2",
+    "containerId": "",
+    "name": "deleteSales",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-01-20T04:52:52.246Z",
+    "modified": "2023-01-20T05:33:01.618Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
   }
 ]

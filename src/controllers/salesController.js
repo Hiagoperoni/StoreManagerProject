@@ -13,14 +13,19 @@ const getAllSales = async (req, res) => {
 
 const getSalesById = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const saleById = await salesService.getSalesById(Number(id));
-  console.log(saleById);
   return res.status(200).json(saleById);
+};
+
+const deleteSale = async (req, res) => {
+  const { id } = req.params;
+  await salesService.deleteSale(id);
+  res.status(204).end();
 };
 
 module.exports = {
   newSale,
   getAllSales,
   getSalesById,
+  deleteSale,
 };
