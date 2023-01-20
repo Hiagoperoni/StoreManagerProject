@@ -21,7 +21,7 @@ const verifyQuantityMidd = async (req, res, next) => {
   const products = req.body;
   console.log('passando no vqm');
   for (let i = 0; i < products.length - 1; i += 1) {
-    if (!products[i].quantity) {
+    if (products[i].quantity === undefined) {
       return res.status(400).json({ message: '"quantity" is required' });
     }
     if (products[i].quantity <= 0) {
