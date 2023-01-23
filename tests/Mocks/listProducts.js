@@ -23,8 +23,14 @@ const createProd = {
   "name": "ProdutoX"
 };
 
+const updatedProduct = {
+  "id": 4,
+  "name": "Martelo do Batman"
+};
+
 module.exports = {
   allProducts,
   getProdById,
   createProd,
+  updatedProduct,
 };
