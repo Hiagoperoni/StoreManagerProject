@@ -5,6 +5,7 @@ const connection = require('../../../src/models/connection');
 const mockListProd = require('../../Mocks/listProducts');
 
 describe('Camada Model do ListProducts', function () {
+
   describe('Testando a função getProducts', function () {
     afterEach(() => {
       sinon.restore();
@@ -15,6 +16,7 @@ describe('Camada Model do ListProducts', function () {
       expect(result).to.be.deep.equal(mockListProd.allProducts)
     });
   });
+
   describe('Testando a função getProductsById', function () {
     afterEach(() => {
       sinon.restore();
@@ -25,6 +27,7 @@ describe('Camada Model do ListProducts', function () {
       expect(result).to.be.deep.equal(mockListProd.getProdById);
     });
   });
+
   describe('Testando a função createProducts', function () {
     afterEach(() => {
       sinon.restore();
@@ -36,7 +39,8 @@ describe('Camada Model do ListProducts', function () {
       expect(result).to.be.equal(4);
     });
   });
-    describe('Testando a função updateProducts', function () {
+
+  describe('Testando a função updateProducts', function () {
     afterEach(() => {
       sinon.restore();
     });
@@ -48,7 +52,8 @@ describe('Camada Model do ListProducts', function () {
       expect(result).to.be.deep.equal({ changedRows: 1 });
     });
   });
-    describe('Testando a função deleteProducts', function () {
+
+  describe('Testando a função deleteProducts', function () {
     afterEach(() => {
       sinon.restore();
     });
