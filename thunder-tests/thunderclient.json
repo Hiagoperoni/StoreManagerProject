@@ -4,16 +4,16 @@
     "colId": "804a56c5-2732-41a2-b24b-08a3f627a9f2",
     "containerId": "",
     "name": "getProducts",
-    "url": "localhost:3000/sales",
-    "method": "POST",
+    "url": "localhost:3000/products/2",
+    "method": "DELETE",
     "sortNum": 20000,
     "created": "2023-01-18T04:35:46.329Z",
-    "modified": "2023-01-20T03:38:53.324Z",
+    "modified": "2023-01-23T19:21:21.507Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "{\n  \"name\": \"Martelo do Barman\"\n}",
       "form": []
     },
     "tests": []
