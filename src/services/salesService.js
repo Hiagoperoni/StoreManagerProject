@@ -26,7 +26,6 @@ const getSalesById = async (id) => {
     };
     return newObject;
   });
-  console.log(saleById, 'esse é o saleById');
   return saleById;
 };
 

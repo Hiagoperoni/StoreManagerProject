@@ -48,7 +48,7 @@ describe('Teste da Camada Service de Sales:', function () {
     });
     it('Testa se capta as infos da venda pelo Id corretamente', async function () {
       sinon.stub(salesModel, 'fetchSalesById').resolves([salesMock.getSalesById]);
-      const [result] = await salesService.getSalesById(4);
+      const [result] = await salesService.getSalesById(2);
       expect(result).to.have.all.keys('date', 'productId', 'quantity');
     });
   });

@@ -25,7 +25,6 @@ const verifyExistsQuantity = async (req, res, next) => {
   if (workFilter.length < products.length) {
     return res.status(400).json({ message: '"quantity" is required' });
   }
-  console.log(products);
   next();
 };
 

@@ -40,16 +40,11 @@ const newSale = {
 
 const getSalesById = [
   {
-    "date": "2023-01-24T01:02:44.000Z",
-    "productId": 1,
-    "quantity": 1
-  },
-  {
-    "date": "2023-01-24T01:02:44.000Z",
+    "date": "2023-01-24T02:20:22.000Z",
     "productId": 3,
-    "quantity": 5
+    "quantity": 15
   }
-]
+];
 
 module.exports = {
   allSales,
