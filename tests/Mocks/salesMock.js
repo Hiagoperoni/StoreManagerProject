@@ -1,11 +1,17 @@
 const allSales = [
   {
-    "saleId": 2,
-    "date": "2023-01-20T16:59:23.000Z",
-    "productId": 3,
-    "quantity": 15
+    "saleId": 3,
+    "date": "2023-01-23T19:42:33.000Z",
+    "productId": 1,
+    "quantity": 1
+  },
+  {
+    "saleId": 3,
+    "date": "2023-01-23T19:42:33.000Z",
+    "productId": 1,
+    "quantity": 5
   }
-];
+]
 
 const newSaleBody = [
   {
@@ -34,16 +40,16 @@ const newSale = {
 
 const getSalesById = [
   {
-    "date": "2023-01-23T19:42:33.000Z",
+    "date": "2023-01-24T01:02:44.000Z",
     "productId": 1,
     "quantity": 1
   },
   {
-    "date": "2023-01-23T19:42:33.000Z",
-    "productId": 1,
+    "date": "2023-01-24T01:02:44.000Z",
+    "productId": 3,
     "quantity": 5
   }
-];
+]
 
 module.exports = {
   allSales,

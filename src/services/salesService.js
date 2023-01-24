@@ -26,12 +26,12 @@ const getSalesById = async (id) => {
     };
     return newObject;
   });
+  console.log(saleById, 'esse é o saleById');
   return saleById;
 };
 
 const deleteSale = async (id) => {
-  const deleteSaleId = await salesModel.deleteSale(id);
-  return deleteSaleId;
+  await salesModel.deleteSale(id);
 };
 
 module.exports = {

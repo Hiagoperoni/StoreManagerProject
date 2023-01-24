@@ -36,7 +36,6 @@ const deleteSale = async (id) => {
 const fetchSalesById = async (id) => {
   const queryById = 'SELECT * FROM StoreManager.sales WHERE id = ?';
   const [deletedById] = await connection.execute(queryById, [id]);
-  console.log(deletedById);
   return deletedById;
 };
 
